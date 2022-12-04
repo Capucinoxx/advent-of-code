@@ -12,6 +12,7 @@ var (
 	sols = []common.Solution{
 		&solutions.Day1{},
 		&solutions.Day2{},
+		&solutions.Day3{},
 	}
 )
 

@@ -17,3 +17,11 @@ func Mul[T int | float64](s []T) T {
 	}
 	return mul
 }
+
+// Abs returns the absolute value of the input
+func Abs[T int | float64](s T) T {
+	if s < 0 {
+		return s * -1
+	}
+	return s
+}

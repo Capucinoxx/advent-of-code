@@ -9,24 +9,24 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day5Phase string
+type Day05Phase string
 
-type Day5 struct {
-	phase       Day5Phase
+type Day05 struct {
+	phase       Day05Phase
 	matrixPart1 [][]uint8
 	matrixPart2 [][]uint8
 	actions     [][3]int
 }
 
 const (
-	Day5PhaseCrates    Day5Phase = "crates"
-	Day5PhaseColumnsId Day5Phase = "columnsId"
-	Day5PhaseActions   Day5Phase = "actions"
+	Day5PhaseCrates    Day05Phase = "crates"
+	Day5PhaseColumnsId Day05Phase = "columnsId"
+	Day5PhaseActions   Day05Phase = "actions"
 
 	Day5CratesColumns = 9
 )
 
-func (d *Day5) Init(input string) {
+func (d *Day05) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -67,9 +67,9 @@ func (d *Day5) Init(input string) {
 	})
 }
 
-func (d *Day5) Title() string { return "--- Day 5: Supply Stacks ---" }
+func (d *Day05) Title() string { return "--- Day 5: Supply Stacks ---" }
 
-func (d *Day5) PartOne() string {
+func (d *Day05) PartOne() string {
 	for _, action := range d.actions {
 		n, from, to := action[0], action[1], action[2]
 
@@ -90,7 +90,7 @@ func (d *Day5) PartOne() string {
 	return sb.String()
 }
 
-func (d *Day5) PartTwo() string {
+func (d *Day05) PartTwo() string {
 	for _, action := range d.actions {
 		n, from, to := action[0], action[1], action[2]
 

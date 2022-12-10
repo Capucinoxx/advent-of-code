@@ -7,22 +7,22 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day8 struct {
-	trees [][]Day8Tree
+type Day08 struct {
+	trees [][]Day08Tree
 }
 
-type Day8Tree struct {
+type Day08Tree struct {
 	height      int
 	visible     bool
 	scenicScore int
 }
 
-func (d *Day8) Init(input string) {
+func (d *Day08) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
 	common.ReadLines(file, func(line string) {
-		d.trees = append(d.trees, make([]Day8Tree, len(line)))
+		d.trees = append(d.trees, make([]Day08Tree, len(line)))
 
 		for i, ch := range line {
 			height, err := strconv.Atoi(string(ch))
@@ -30,7 +30,7 @@ func (d *Day8) Init(input string) {
 				continue
 			}
 
-			d.trees[len(d.trees)-1][i] = Day8Tree{height: height}
+			d.trees[len(d.trees)-1][i] = Day08Tree{height: height}
 		}
 	})
 
@@ -80,9 +80,9 @@ func (d *Day8) Init(input string) {
 	}
 }
 
-func (d *Day8) Title() string { return "--- Day 8: Treetop Tree House ---" }
+func (d *Day08) Title() string { return "--- Day 8: Treetop Tree House ---" }
 
-func (d *Day8) PartOne() string {
+func (d *Day08) PartOne() string {
 	count := 0
 
 	for _, row := range d.trees {
@@ -96,7 +96,7 @@ func (d *Day8) PartOne() string {
 	return strconv.Itoa(count)
 }
 
-func (d *Day8) PartTwo() string {
+func (d *Day08) PartTwo() string {
 	max := 0
 
 	for _, row := range d.trees {

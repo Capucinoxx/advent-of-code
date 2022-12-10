@@ -10,15 +10,15 @@ import (
 
 var (
 	sols = []common.Solution{
-		&solutions.Day1{},
-		&solutions.Day2{},
-		&solutions.Day3{},
-		&solutions.Day4{},
-		&solutions.Day5{},
-		&solutions.Day6{},
-		&solutions.Day7{},
-		&solutions.Day8{},
-		&solutions.Day9{},
+		&solutions.Day01{},
+		&solutions.Day02{},
+		&solutions.Day03{},
+		&solutions.Day04{},
+		&solutions.Day05{},
+		&solutions.Day06{},
+		&solutions.Day07{},
+		&solutions.Day08{},
+		&solutions.Day09{},
 		&solutions.Day10{},
 	}
 )

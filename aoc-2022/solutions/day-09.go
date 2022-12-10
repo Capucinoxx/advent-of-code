@@ -8,18 +8,18 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day9 struct {
-	ropePartOne *Day9Rope
-	ropePartTwo *Day9Rope
+type Day09 struct {
+	ropePartOne *Day09Rope
+	ropePartTwo *Day09Rope
 }
 
-type Day9Rope struct {
+type Day09Rope struct {
 	length  int
 	rope    [][2]int
 	visited map[[2]int]struct{}
 }
 
-func (d *Day9Rope) Move(direction string) {
+func (d *Day09Rope) Move(direction string) {
 	switch direction {
 	case "R":
 		d.rope[0] = [2]int{d.rope[0][0] + 1, d.rope[0][1]}
@@ -59,16 +59,16 @@ func (d *Day9Rope) Move(direction string) {
 	d.visited[d.rope[len(d.rope)-1]] = struct{}{}
 }
 
-func (d *Day9) Init(input string) {
+func (d *Day09) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
-	d.ropePartOne = &Day9Rope{
+	d.ropePartOne = &Day09Rope{
 		length:  2,
 		rope:    make([][2]int, 2),
 		visited: make(map[[2]int]struct{}),
 	}
-	d.ropePartTwo = &Day9Rope{
+	d.ropePartTwo = &Day09Rope{
 		length:  10,
 		rope:    make([][2]int, 10),
 		visited: make(map[[2]int]struct{}),
@@ -87,12 +87,12 @@ func (d *Day9) Init(input string) {
 	})
 }
 
-func (d *Day9) Title() string { return "--- Day 9: Rope Bridge ---" }
+func (d *Day09) Title() string { return "--- Day 9: Rope Bridge ---" }
 
-func (d *Day9) PartOne() string {
+func (d *Day09) PartOne() string {
 	return strconv.Itoa(len(d.ropePartOne.visited))
 }
 
-func (d *Day9) PartTwo() string {
+func (d *Day09) PartTwo() string {
 	return strconv.Itoa(len(d.ropePartTwo.visited))
 }

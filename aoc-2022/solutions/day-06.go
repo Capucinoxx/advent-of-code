@@ -7,31 +7,31 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day6 struct {
+type Day06 struct {
 	postPartOne int
 	postPartTwo int
 }
 
-type Day6Character struct {
+type Day06Character struct {
 	Count    int
 	Position int
 }
 
-func (d *Day6) Init(input string) {
+func (d *Day06) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
-	hash := make(map[int32]Day6Character)
+	hash := make(map[int32]Day06Character)
 	common.ReadLines(file, func(line string) {
 		count := 0
 		for i, ch := range line {
 			count++
 
 			if old, ok := hash[ch]; !ok || i-old.Position > count {
-				hash[ch] = Day6Character{Count: count, Position: i}
+				hash[ch] = Day06Character{Count: count, Position: i}
 			} else {
 				count = i - hash[ch].Position
-				hash[ch] = Day6Character{Count: count, Position: i}
+				hash[ch] = Day06Character{Count: count, Position: i}
 			}
 
 			if count == 4 && d.postPartOne == 0 {
@@ -45,12 +45,12 @@ func (d *Day6) Init(input string) {
 	})
 }
 
-func (d *Day6) Title() string { return "--- Day 6: Tuning Trouble ---" }
+func (d *Day06) Title() string { return "--- Day 6: Tuning Trouble ---" }
 
-func (d *Day6) PartOne() string {
+func (d *Day06) PartOne() string {
 	return strconv.Itoa(d.postPartOne)
 }
 
-func (d *Day6) PartTwo() string {
+func (d *Day06) PartTwo() string {
 	return strconv.Itoa(d.postPartTwo)
 }

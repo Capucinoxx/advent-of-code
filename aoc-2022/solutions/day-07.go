@@ -8,11 +8,11 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day7 struct {
+type Day07 struct {
 	sizes map[string]int
 }
 
-func (d *Day7) Init(input string) {
+func (d *Day07) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -54,9 +54,9 @@ func (d *Day7) Init(input string) {
 	})
 }
 
-func (d *Day7) Title() string { return "--- Day 7: No Space Left On Device ---" }
+func (d *Day07) Title() string { return "--- Day 7: No Space Left On Device ---" }
 
-func (d *Day7) PartOne() string {
+func (d *Day07) PartOne() string {
 	sum := 0
 
 	for _, size := range d.sizes {
@@ -68,7 +68,7 @@ func (d *Day7) PartOne() string {
 	return strconv.Itoa(sum)
 }
 
-func (d *Day7) PartTwo() string {
+func (d *Day07) PartTwo() string {
 	missingSpace := d.sizes["/"] - 40_000_000
 	min := int(^uint(0) >> 1)
 

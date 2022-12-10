@@ -7,12 +7,12 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day3 struct {
+type Day03 struct {
 	items  []string
 	groups [][3]string
 }
 
-func (d *Day3) Init(input string) {
+func (d *Day03) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -31,9 +31,9 @@ func (d *Day3) Init(input string) {
 	})
 }
 
-func (d *Day3) Title() string { return "--- Day 3: Rucksack Reorganization ---" }
+func (d *Day03) Title() string { return "--- Day 3: Rucksack Reorganization ---" }
 
-func (d *Day3) PartOne() string {
+func (d *Day03) PartOne() string {
 	sum := 0
 
 	for i := 0; i < len(d.items); i += 2 {
@@ -46,7 +46,7 @@ func (d *Day3) PartOne() string {
 	return strconv.Itoa(sum)
 }
 
-func (d *Day3) PartTwo() string {
+func (d *Day03) PartTwo() string {
 	sum := 0
 
 	for _, group := range d.groups {
@@ -82,7 +82,7 @@ func itemsIntersection[T comparable](s ...[]T) (inter []T) {
 	return
 }
 
-func (d *Day3) toScore(ch byte) int {
+func (d *Day03) toScore(ch byte) int {
 	if ch <= 'Z' {
 		return int(ch - 'A' + 27)
 	}

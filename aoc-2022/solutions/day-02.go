@@ -8,12 +8,12 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day2 struct {
+type Day02 struct {
 	sumPartOne int
 	sumPartTwo int
 }
 
-func (d *Day2) Init(input string) {
+func (d *Day02) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -37,8 +37,8 @@ func (d *Day2) Init(input string) {
 	})
 }
 
-func (d *Day2) Title() string { return "--- Day 2: Rock Paper Scissors ---" }
+func (d *Day02) Title() string { return "--- Day 2: Rock Paper Scissors ---" }
 
-func (d *Day2) PartOne() string { return strconv.Itoa(d.sumPartOne) }
+func (d *Day02) PartOne() string { return strconv.Itoa(d.sumPartOne) }
 
-func (d *Day2) PartTwo() string { return strconv.Itoa(d.sumPartTwo) }
+func (d *Day02) PartTwo() string { return strconv.Itoa(d.sumPartTwo) }

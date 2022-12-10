@@ -8,11 +8,11 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day1 struct {
+type Day01 struct {
 	calories []int
 }
 
-func (d *Day1) Init(input string) {
+func (d *Day01) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -31,13 +31,13 @@ func (d *Day1) Init(input string) {
 	sort.Ints(d.calories)
 }
 
-func (d *Day1) Title() string { return "--- Day 1: Calorie Counting ---" }
+func (d *Day01) Title() string { return "--- Day 1: Calorie Counting ---" }
 
-func (d *Day1) PartOne() string {
+func (d *Day01) PartOne() string {
 	return strconv.Itoa(d.calories[len(d.calories)-1])
 }
 
-func (d *Day1) PartTwo() string {
+func (d *Day01) PartTwo() string {
 	res := common.Sum(d.calories[len(d.calories)-3:])
 	return strconv.Itoa(res)
 }

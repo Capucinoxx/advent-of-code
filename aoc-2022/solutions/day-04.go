@@ -8,11 +8,11 @@ import (
 	"github.com/Capucinoxx/advent-of-code/aoc-2022/common"
 )
 
-type Day4 struct {
+type Day04 struct {
 	pairsList [][2][2]int
 }
 
-func (d *Day4) Init(input string) {
+func (d *Day04) Init(input string) {
 	file, _ := os.Open(input)
 	defer file.Close()
 
@@ -29,9 +29,9 @@ func (d *Day4) Init(input string) {
 	})
 }
 
-func (d *Day4) Title() string { return "--- Day 4: Camp Cleanup ---" }
+func (d *Day04) Title() string { return "--- Day 4: Camp Cleanup ---" }
 
-func (d *Day4) PartOne() string {
+func (d *Day04) PartOne() string {
 	sum := 0
 
 	contains := func(a [2]int, b [2]int) bool {
@@ -47,7 +47,7 @@ func (d *Day4) PartOne() string {
 	return strconv.Itoa(sum)
 }
 
-func (d *Day4) PartTwo() string {
+func (d *Day04) PartTwo() string {
 	sum := 0
 
 	overlap := func(a [2]int, b [2]int) bool {

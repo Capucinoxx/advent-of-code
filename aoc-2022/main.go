@@ -24,9 +24,14 @@ var (
 )
 
 func main() {
-	fmt.Println("Solution for AOC 2022\n")
+	fmt.Println("Solution for AOC 2022")
 	for i, s := range sols {
-		s.Init("inputs/day-" + strconv.Itoa(i+1) + ".txt")
+		day := strconv.Itoa(i + 1)
+		if i < 9 {
+			day = "0" + day
+		}
+
+		s.Init("inputs/day-" + day + ".txt")
 		common.Print(s)
 	}
 }

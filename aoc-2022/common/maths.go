@@ -25,3 +25,14 @@ func Abs[T int | float64](s T) T {
 	}
 	return s
 }
+
+// Max returns the maximum value in the slice
+func Max[T int | float64](s ...T) T {
+	var max T
+	for _, v := range s {
+		if v > max {
+			max = v
+		}
+	}
+	return max
+}

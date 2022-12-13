@@ -12,9 +12,12 @@ func TrimSplit(str string, prefix, separator string) []string {
 
 // ToUInt64s converts a slice of strings to a slice of uint64s
 func ToUInt64s(str ...string) []uint64 {
-	ints := make([]uint64, len(str))
-	for i, str := range str {
-		ints[i], _ = strconv.ParseUint(str, 10, 64)
+	ints := make([]uint64, 0, len(str))
+	for _, str := range str {
+		v, err := strconv.ParseUint(str, 10, 64)
+		if err == nil {
+			ints = append(ints, v)
+		}
 	}
 	return ints
 }

@@ -22,6 +22,7 @@ var (
 		&solutions.Day10{},
 		&solutions.Day11{},
 		&solutions.Day12{},
+		&solutions.Day13{},
 	}
 )
 

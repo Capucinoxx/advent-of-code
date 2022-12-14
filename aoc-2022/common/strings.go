@@ -21,3 +21,15 @@ func ToUInt64s(str ...string) []uint64 {
 	}
 	return ints
 }
+
+// ToInts converts a slice of strings to a slice of ints
+func ToInts(str ...string) []int {
+	ints := make([]int, 0, len(str))
+	for _, str := range str {
+		v, err := strconv.Atoi(str)
+		if err == nil {
+			ints = append(ints, v)
+		}
+	}
+	return ints
+}

@@ -1,5 +1,7 @@
 package common
 
+import "golang.org/x/exp/constraints"
+
 // Sum sums all the values in the slice
 func Sum[T int | float64](s []T) T {
 	var sum T
@@ -27,7 +29,7 @@ func Abs[T int | float64](s T) T {
 }
 
 // Max returns the maximum value in the slice
-func Max[T int | float64](s ...T) T {
+func Max[T constraints.Ordered](s ...T) T {
 	var max T
 	for _, v := range s {
 		if v > max {
@@ -35,4 +37,15 @@ func Max[T int | float64](s ...T) T {
 		}
 	}
 	return max
+}
+
+// Min returns the minimum value in the slice
+func Min[T constraints.Ordered](s ...T) T {
+	var min T
+	for i, v := range s {
+		if i == 0 || v < min {
+			min = v
+		}
+	}
+	return min
 }
